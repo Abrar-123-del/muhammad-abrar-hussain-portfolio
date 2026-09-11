@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capture Rig — Muhammad Abrar Hussain</title>
+<meta name="description" content="Portfolio of Muhammad Abrar Hussain — Master’s researcher in Computer Engineering working on deep learning, computer vision, and Mixed Reality at the Intelligent and Mixed Reality Lab, Chosun University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;800&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2315181C'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23B9791E'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hud">
+  <div class="hud-left">
+    <span class="rec-dot" aria-hidden="true"></span>
+    <span class="rec-label">REC</span>
+    <span id="framecount" aria-hidden="true">F 000000</span>
+    <span class="hud-lab">&middot; INTELLIGENT &amp; MIXED REALITY LAB, CHOSUN UNIV</span>
+  </div>
+  <nav class="hud-nav" id="hud-nav" aria-label="Primary">
+    <a href="#about" data-target="about">About</a>
+    <a href="#research" data-target="research">Research</a>
+    <a href="#publications" data-target="publications">Publications</a>
+    <a href="#contact" data-target="contact">Contact</a>
+  </nav>
+</header>
+<div class="scrub" aria-hidden="true"><div class="scrub-fill" id="scrubfill"></div></div>
+
+<main class="wrap" id="main">
+
+  <section class="hero" id="top">
+    <div>
+      <div class="eyebrow">Master&rsquo;s Researcher &middot; Computer Engineering</div>
+      <h1>
+        <span class="word" style="animation-delay:.05s">Muhammad</span>
+        <span class="word" style="animation-delay:.16s">Abrar</span>
+        <span class="word" style="animation-delay:.27s">Hussain<span class="dot">.</span></span>
+      </h1>
+      <div class="hero-role">Computer Graphics &middot; AI &amp; Deep Learning &middot; Computer Vision &middot; Mixed Reality</div>
+      <p class="hero-lede">I turn how the body moves &mdash; a hand shaping a gesture, a foot stepping through mid-air, a head panning through a 360&deg; scene &mdash; into signals a <strong>Mixed Reality</strong> system can act on. Based at the Intelligent and Mixed Reality Lab, Chosun University, South Korea.</p>
+      <div class="hero-facts">
+        <span>Chosun University, KR</span>
+        <span>PyTorch &middot; Unity</span>
+        <span>Balti &middot; Urdu &middot; English</span>
+      </div>
+      <a class="scroll-cue" href="#about">
+        <span>scroll</span>
+        <svg width="10" height="14" viewBox="0 0 10 14" fill="none" aria-hidden="true"><path d="M5 1V13M5 13L1 9M5 13L9 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="viewfinder" aria-hidden="true">
+      <span class="vf-corner tl"></span><span class="vf-corner tr"></span>
+      <span class="vf-corner bl"></span><span class="vf-corner br"></span>
+      <div class="vf-head"><span>CAM_01 &middot; EGOCENTRIC</span><span>21 KEYPOINTS</span></div>
+      <canvas id="hand" width="640" height="520"></canvas>
+      <span class="vf-tag" id="conf-tag">gesture: open_palm &middot; 0.94</span>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="eyebrow reveal"><span class="idx">01</span>About</div>
+    <div class="about reveal" style="margin-top:28px;">
+      <div>
+        <p>I&rsquo;m a Master&rsquo;s researcher in Computer Engineering, working at the intersection of <strong>deep learning, computer vision, and Mixed Reality</strong>. Most of my research asks the same question in different forms: given a camera pointed at part of a moving body, what is the smallest, most reliable signal a model needs to recognize intent?</p>
+        <p>That has meant comparing convolutional and transformer architectures on static hand gestures, building a two-stream temporal model for dynamic egocentric gestures in VR, and designing <strong>FootSense</strong> &mdash; a body-worn 360&deg; camera system for recognizing foot-based input when your hands are busy holding a headset controller. I integrate what works into Unity-based MR prototypes.</p>
+      </div>
+      <div class="edu">
+        <div class="edu-item">
+          <div class="deg">MSc, Computer Engineering</div>
+          <div class="inst">Chosun University, South Korea</div>
+          <div class="meta">IN PROGRESS &middot; IMR LAB</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">BSc, Computer Systems Engineering</div>
+          <div class="inst">Mirpur University of Science &amp; Technology, Pakistan</div>
+          <div class="meta">2017&ndash;2021 &middot; CGPA 3.20/4.00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="eyebrow reveal"><span class="idx">02</span>Selected Research</div>
+    <div class="grid reveal-group" style="margin-top:28px;">
+      <article class="frame reveal" style="--i:0">
+        <span class="vf-corner tl"></span><span class="vf-corner br"></span>
+        <span class="status pub">Published &middot; Virtual Worlds, 2025</span>
+        <h3>TSMTFN: Two-Stream Temporal Shift Module Network</h3>
+        <div class="mini-viz"><canvas class="mv-hand" width="300" height="150"></canvas></div>
+        <p>A two-stream network for efficient egocentric dynamic hand-gesture recognition in VR, using temporal shift modules in place of heavier 3D convolutions.</p>
+        <span class="venue">gesture recognition &middot; VR &middot; efficiency</span>
+      </article>
+      <article class="frame reveal" style="--i:1">
+        <span class="vf-corner tl"></span><span class="vf-corner br"></span>
+        <span class="status pub">Published &middot; JKCGS, 2025</span>
+        <h3>DenseNet vs. ViT for Static Hand Gesture Recognition</h3>
+        <p>A comparative study on HaGRID, weighing convolutional inductive bias against transformer attention for static gesture classification.</p>
+        <span class="venue">DenseNet &middot; Vision Transformer &middot; HaGRID</span>
+      </article>
+      <article class="frame reveal" style="--i:2">
+        <span class="vf-corner tl"></span><span class="vf-corner br"></span>
+        <span class="status pend">Submitted &middot; IEEE VR</span>
+        <h3>FootSense: Body-Worn 360&deg; Camera for Foot Input</h3>
+        <div class="mini-viz round"><canvas class="mv-foot" width="300" height="150"></canvas></div>
+        <p>A waist-worn 360&deg; camera, aimed down at the feet, that recognizes foot-based gestures for Mixed Reality &mdash; freeing the hands for other input.</p>
+        <span class="venue">360&deg; vision &middot; foot interaction &middot; MR</span>
+      </article>
+      <article class="frame reveal" style="--i:3">
+        <span class="vf-corner tl"></span><span class="vf-corner br"></span>
+        <span class="status pend">Submitted &middot; VRST (poster)</span>
+        <h3>From Ten to Five: Confusion-Guided Vocabulary Reduction</h3>
+        <div class="mini-viz"><canvas class="mv-compass" width="300" height="150"></canvas></div>
+        <p>Uses confusion patterns between gesture classes to shrink a ten-gesture vocabulary to five for more reliable single-view foot-gesture recognition.</p>
+        <span class="venue">vocabulary reduction &middot; single-view</span>
+      </article>
+    </div>
+
+    <div class="concept-card reveal" id="concept">
+      <div class="concept-head">
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">A personal synthesis &middot; not (yet) published</div>
+          <h3>Grab, then walk: hand and foot recognition sharing one interaction</h3>
+        </div>
+        <a class="concept-link" href="https://claude.ai/code/artifact/5b4de603-e8eb-4f29-8caa-25191135270b" target="_blank" rel="noopener">Open full interactive version &#8599;</a>
+      </div>
+      <p>FootSense exists because mid-air hand gestures fatigue and controllers occupy the hands. But hand gestures are still the more precise channel for fine manipulation. This is a small working sketch of what happens when the two share one object: a hand grabs and rotates it, a foot carries it through space. Try it below.</p>
+
+      <div class="rig">
+        <div class="rig-panel">
+          <div class="rig-panel-label"><span>HAND</span><b>21 KP</b></div>
+          <div class="rig-stage"><canvas id="c-hand" width="300" height="240" role="img" aria-label="Animated hand skeleton visualization"></canvas></div>
+          <div class="rig-btns">
+            <button class="gbtn active" data-chand="open_palm">open palm</button>
+            <button class="gbtn" data-chand="pinch">pinch</button>
+            <button class="gbtn" data-chand="point">point</button>
+          </div>
+          <div class="rig-readout">state: <b id="c-hand-state">released</b></div>
+        </div>
+
+        <div class="rig-panel rig-center">
+          <div class="rig-panel-label"><span>OBJECT</span><b>QUEST PRO</b></div>
+          <div class="rig-stage">
+            <div class="rig-hud"><span>OBJ_01</span><span id="c-grab-tag">RELEASED</span></div>
+            <canvas id="c-cube" width="320" height="240"></canvas>
+          </div>
+          <div class="rig-rule" id="c-rule">Released &mdash; a step or lift nudges the object, but it settles back to center.</div>
+        </div>
+
+        <div class="rig-panel">
+          <div class="rig-panel-label"><span>FOOT &middot; LOOKING DOWN</span><b>360&deg;</b></div>
+          <div class="rig-stage"><canvas id="c-foot" width="300" height="240" role="img" aria-label="Animated top-down foot camera visualization"></canvas></div>
+          <div class="rig-btns">
+            <button class="gbtn foot-btn" data-cfoot="forward">forward</button>
+            <button class="gbtn foot-btn" data-cfoot="back">back</button>
+            <button class="gbtn foot-btn" data-cfoot="left">left</button>
+            <button class="gbtn foot-btn" data-cfoot="right">right</button>
+            <button class="gbtn foot-btn" data-cfoot="up">up</button>
+          </div>
+          <div class="rig-readout">state: <b id="c-foot-state">idle</b></div>
+        </div>
+      </div>
+      <div class="rig-note">Prototype for exploration only &mdash; a design sketch, not a validated result.</div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="eyebrow reveal"><span class="idx">03</span>Publications</div>
+    <div class="pubs reveal" style="margin-top:28px;">
+      <div class="pub">
+        <span class="pub-year mono">2025</span>
+        <div class="pub-title">M. A. Hussain, C. Chun, and S. K. Kim. &ldquo;TSMTFN: Two-Stream Temporal Shift Module Network for Efficient Egocentric Gesture Recognition in Virtual Reality.&rdquo;<span class="pub-venue">Virtual Worlds, 4(4), article 58</span></div>
+      </div>
+      <div class="pub">
+        <span class="pub-year mono">2025</span>
+        <div class="pub-title">M. A. Hussain et al. &ldquo;A Comparative Study of Deep Learning Models for Static Hand Gesture Recognition: DenseNet vs. ViT with HaGRID.&rdquo;<span class="pub-venue">Journal of the Korea Computer Graphics Society</span></div>
+      </div>
+      <div class="pub">
+        <span class="pub-year mono">2026</span>
+        <div class="pub-title">&ldquo;A CFD-Informed AI Framework for Temperature Forecasting of PV&ndash;PCM Systems Employing Different AI Models.&rdquo; <span style="color:var(--ink-soft);">(2nd author &mdash; integrated CFD simulation data with AI models; wrote the AI implementation section)</span><span class="pub-venue">International Journal of Heat and Mass Transfer, 267</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="eyebrow reveal"><span class="idx">04</span>Skills</div>
+    <div class="reveal" style="margin-top:28px;">
+      <div class="skill-group">
+        <div class="skill-label">Graphics &amp; Mixed Reality</div>
+        <div class="chips"><span class="chip">Unity</span><span class="chip">MR prototyping</span><span class="chip">Gesture-driven interaction</span><span class="chip">360&deg; camera systems</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">AI &amp; Computer Vision</div>
+        <div class="chips"><span class="chip">PyTorch</span><span class="chip">DenseNet</span><span class="chip">Vision Transformer</span><span class="chip">CNNs</span><span class="chip">Transfer learning</span><span class="chip">Gesture recognition</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Programming &amp; Analysis</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">MATLAB</span><span class="chip">NumPy</span><span class="chip">pandas</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Research Tools</div>
+        <div class="chips"><span class="chip">LaTeX</span><span class="chip">Jupyter</span><span class="chip">Mendeley</span><span class="chip">VS Code</span><span class="chip">OriginLab</span><span class="chip">GraphPad Prism</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="eyebrow reveal"><span class="idx">05</span>Awards &amp; Scholarships</div>
+    <div class="awards reveal" style="margin-top:28px;">
+      <div class="award"><span>Research Assistant Scholarship</span><span>Every semester</span></div>
+      <div class="award"><span>MECA Talent Development Young Researcher (ROOKIE) Research Support Program</span><span>2nd &amp; 3rd semester</span></div>
+      <div class="award"><span>MECA Talent Development Scholarship</span><span>3rd semester</span></div>
+      <div class="award"><span>G-LAMP Project Team Seedling Program</span><span>3rd semester</span></div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom:none;">
+    <div class="contact reveal">
+      <div class="eyebrow"><span class="idx">06</span>Get in touch</div>
+      <h2 style="margin-top:14px;">Open to collaboration on gesture recognition, MR interaction, and egocentric vision.</h2>
+      <div class="contact-row">
+        <a href="mailto:muhammadabrargb@gmail.com">muhammadabrargb@gmail.com</a>
+        <a href="https://scholar.google.com/citations?user=76RcqcYAAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Muhammad-Abrar-Hussain-4?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 Muhammad Abrar Hussain &mdash; Intelligent and Mixed Reality Lab, Chosun University</span>
+    <span id="foot-clock">SEOUL, KR</span>
+  </footer>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
